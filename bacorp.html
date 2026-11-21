@@ -1,0 +1,3137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BACORP SERVICIOS GENERALES S.A.C. (RUC 20608555146) - Soluciones que impulsan tu negocio. Licitaciones públicas, suministro de flotas vehiculares, maquinaria pesada y alquiler de módulos para eventos y Feria KPOP 2F.">
+    <title>BACORP SERVICIOS GENERALES S.A.C. | Flotas, Equipamiento y Logística para Eventos</title>
+
+    <!-- Tipografías Oficiales del Manual de Identidad Corporativa (TA3): Montserrat (Títulos) y Roboto (Textos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. VARIABLES CSS - MANUAL DE IDENTIDAD CORPORATIVA BACORP (TA3 PÁG. 9-10)
+           ========================================================================== */
+        :root {
+            /* Colores Institucionales Oficiales */
+            --bacorp-orange: #FF6600;          /* Naranja principal: Energía, dinamismo, confianza */
+            --bacorp-orange-hover: #E05500;
+            --bacorp-orange-soft: #FFF2E8;
+            --bacorp-orange-border: rgba(255, 102, 0, 0.35);
+
+            --bacorp-gray-dark: #4D4D4D;       /* Gris oscuro oficial: Profesionalismo, solidez, seguridad */
+            --bacorp-charcoal: #22252A;        /* Variante profunda para cabeceras y alto contraste */
+            --bacorp-navy-dark: #141821;       /* Fondo institucional oscuro */
+            --bacorp-gray-mid: #6B7280;
+            --bacorp-gray-light: #D9D9D9;      /* Gris claro oficial: Equilibrio, limpieza, modernidad */
+            --bacorp-bg-soft: #F7F8FA;
+            --bacorp-white: #FFFFFF;           /* Blanco oficial: Claridad, orden, simplicidad */
+
+            /* Acento Secundario para Sub-línea K-POP 2F */
+            --kpop-accent: #7C3AED;
+            --kpop-soft: #F3E8FF;
+
+            /* Estados Semánticos y Certificaciones */
+            --iso-green: #059669;
+            --iso-green-bg: #D1FAE5;
+            --status-blue: #2563EB;
+            --status-error: #DC2626;
+
+            /* Tipografías Oficiales */
+            --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+
+            /* Layout y Dimensiones */
+            --container-width: 1280px;
+            --topbar-height: 38px;
+            --navbar-height: 86px;
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 22px;
+
+            --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 10px 25px -5px rgba(20, 24, 33, 0.1);
+            --shadow-lg: 0 20px 40px -10px rgba(20, 24, 33, 0.18);
+            --shadow-orange: 0 10px 25px -4px rgba(255, 102, 0, 0.4);
+            --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ==========================================================================
+           2. RESET Y ESTILOS BASE
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--navbar-height) + 16px);
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--bacorp-gray-dark);
+            background-color: var(--bacorp-bg-soft);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: var(--bacorp-charcoal);
+            line-height: 1.2;
+            letter-spacing: -0.015em;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button, input, select, textarea {
+            font-family: inherit;
+            font-size: inherit;
+            border: none;
+            outline: none;
+        }
+
+        button {
+            cursor: pointer;
+            background: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-padding {
+            padding: 5.5rem 0;
+        }
+
+        .section-header {
+            max-width: 780px;
+            margin: 0 auto 3.5rem;
+            text-align: center;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.38rem 1rem;
+            border-radius: 999px;
+            font-family: var(--font-heading);
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.9rem;
+        }
+
+        .tag-orange {
+            background-color: var(--bacorp-orange-soft);
+            color: var(--bacorp-orange);
+            border: 1px solid var(--bacorp-orange-border);
+        }
+
+        .tag-dark {
+            background-color: rgba(255, 102, 0, 0.16);
+            color: #FF8533;
+            border: 1px solid rgba(255, 102, 0, 0.4);
+        }
+
+        .tag-kpop {
+            background-color: var(--kpop-soft);
+            color: var(--kpop-accent);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 3.2vw, 2.55rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--bacorp-charcoal);
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--bacorp-gray-dark);
+            line-height: 1.65;
+        }
+
+        /* Botones Oficiales BACORP */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.85rem 1.65rem;
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-radius: var(--radius-md);
+            transition: all var(--transition);
+            white-space: nowrap;
+        }
+
+        .btn-orange {
+            background-color: var(--bacorp-orange);
+            color: var(--bacorp-white);
+            box-shadow: 0 4px 14px rgba(255, 102, 0, 0.3);
+        }
+
+        .btn-orange:hover {
+            background-color: var(--bacorp-orange-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-orange);
+        }
+
+        .btn-dark {
+            background-color: var(--bacorp-charcoal);
+            color: var(--bacorp-white);
+        }
+
+        .btn-dark:hover {
+            background-color: var(--bacorp-orange);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-light {
+            background-color: rgba(255, 255, 255, 0.08);
+            color: var(--bacorp-white);
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(6px);
+        }
+
+        .btn-outline-light:hover {
+            background-color: var(--bacorp-white);
+            color: var(--bacorp-charcoal);
+            border-color: var(--bacorp-white);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-orange {
+            background-color: transparent;
+            color: var(--bacorp-orange);
+            border: 1.5px solid var(--bacorp-orange);
+        }
+
+        .btn-outline-orange:hover {
+            background-color: var(--bacorp-orange);
+            color: var(--bacorp-white);
+        }
+
+        /* ==========================================================================
+           3. TOPBAR INSTITUCIONAL Y BARRA DE NAVEGACIÓN (CON LOGO OFICIAL SVG)
+           ========================================================================== */
+        .topbar {
+            background-color: var(--bacorp-navy-dark);
+            color: var(--bacorp-gray-light);
+            font-size: 0.78rem;
+            padding: 0.45rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .topbar-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .topbar-left, .topbar-right {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.15rem;
+        }
+
+        .topbar-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .topbar-item strong {
+            color: var(--bacorp-white);
+        }
+
+        .topbar-badge {
+            background-color: rgba(255, 102, 0, 0.2);
+            color: #FF8533;
+            border: 1px solid rgba(255, 102, 0, 0.4);
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.72rem;
+        }
+
+        /* Navbar Principal */
+        .navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--navbar-height);
+            background-color: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid var(--bacorp-gray-light);
+            z-index: 1000;
+            transition: all var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+            height: 78px;
+            border-bottom-color: var(--bacorp-orange);
+        }
+
+        .navbar-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            gap: 1rem;
+        }
+
+        /* Logotipo Oficial BACORP Recreación Fiel (Imagen adjunta y Pág. 9-11 TA3) */
+        .bacorp-brand-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .bacorp-logo-box {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+        }
+
+        .bacorp-wordmark {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .bacorp-wordmark-main {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 900;
+            color: var(--bacorp-orange);
+            letter-spacing: 0.02em;
+        }
+
+        .bacorp-wordmark-sub {
+            font-family: var(--font-heading);
+            font-size: 0.55rem;
+            font-weight: 700;
+            color: var(--bacorp-gray-dark);
+            letter-spacing: 0.17em;
+            margin-top: 3px;
+            white-space: nowrap;
+        }
+
+        .bacorp-gear-svg {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            transition: transform 0.5s ease;
+        }
+
+        .bacorp-brand-wrap:hover .bacorp-gear-svg {
+            transform: rotate(25deg);
+        }
+
+        .bacorp-brand-divider {
+            width: 1.5px;
+            height: 36px;
+            background-color: #B0B5BC;
+        }
+
+        .bacorp-brand-slogan {
+            font-family: var(--font-heading);
+            font-size: 0.78rem;
+            line-height: 1.25;
+            color: var(--bacorp-orange);
+            font-weight: 500;
+            max-width: 145px;
+        }
+
+        .bacorp-brand-slogan strong {
+            font-weight: 800;
+        }
+
+        /* Enlaces del Navbar */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.15rem;
+        }
+
+        .nav-link {
+            font-family: var(--font-heading);
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: var(--bacorp-gray-dark);
+            padding: 0.35rem 0;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2.5px;
+            background-color: var(--bacorp-orange);
+            transition: width var(--transition);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--bacorp-orange);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .cart-trigger-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.6rem 0.95rem;
+            border-radius: var(--radius-md);
+            background-color: var(--bacorp-bg-soft);
+            border: 1.5px solid var(--bacorp-gray-light);
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--bacorp-charcoal);
+            transition: all var(--transition);
+        }
+
+        .cart-trigger-btn:hover {
+            border-color: var(--bacorp-orange);
+            color: var(--bacorp-orange);
+        }
+
+        .cart-count-badge {
+            background-color: var(--bacorp-orange);
+            color: var(--bacorp-white);
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 0.1rem 0.45rem;
+            border-radius: 999px;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        /* Menú Hamburguesa Móvil */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            z-index: 1002;
+        }
+
+        .menu-toggle .bar {
+            width: 100%;
+            height: 3px;
+            background-color: var(--bacorp-charcoal);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: translateY(8.5px) rotate(45deg);
+            background-color: var(--bacorp-orange);
+        }
+
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: translateY(-8.5px) rotate(-45deg);
+            background-color: var(--bacorp-orange);
+        }
+
+        /* ==========================================================================
+           4. HERO SECTION ("BACORP DUAL: DOS MUNDOS, UN CLICK" + ISO 14001/37001)
+           ========================================================================== */
+        .hero {
+            position: relative;
+            padding: 4.5rem 0 5rem;
+            background-color: var(--bacorp-navy-dark);
+            background-image:
+                linear-gradient(110deg, rgba(20, 24, 33, 0.96) 0%, rgba(20, 24, 33, 0.88) 55%, rgba(77, 77, 77, 0.78) 100%),
+                url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--bacorp-white);
+            overflow: hidden;
+        }
+
+        /* Corte diagonal naranja corporativo estilo Catálogo Pág. 12 y 30 TA3 */
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 340px;
+            height: 12px;
+            background: linear-gradient(90deg, transparent 0%, var(--bacorp-orange) 30%);
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.25fr 0.85fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-campaign-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.42rem 1rem;
+            background: rgba(255, 102, 0, 0.16);
+            border: 1px solid rgba(255, 102, 0, 0.45);
+            border-radius: 999px;
+            color: #FF8533;
+            font-family: var(--font-heading);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+            font-weight: 900;
+            color: var(--bacorp-white);
+            line-height: 1.12;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title .text-orange {
+            color: var(--bacorp-orange);
+        }
+
+        .hero-descriptor {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--bacorp-gray-light);
+            border-left: 4px solid var(--bacorp-orange);
+            padding-left: 0.85rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: #CBD5E1;
+            max-width: 640px;
+            margin-bottom: 2rem;
+            line-height: 1.65;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-kpis {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            padding-top: 1.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .hero-kpi-item strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--bacorp-orange);
+        }
+
+        .hero-kpi-item span {
+            font-size: 0.78rem;
+            color: var(--bacorp-gray-light);
+        }
+
+        /* Tarjeta Derecha Hero: Respaldo Certificado (Pág. 4 y Anexo Fig. 1 TA3) */
+        .hero-cert-card {
+            background: var(--bacorp-white);
+            color: var(--bacorp-charcoal);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            border-top: 6px solid var(--bacorp-orange);
+        }
+
+        .cert-card-badge {
+            font-family: var(--font-heading);
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--bacorp-orange);
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-cert-card h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 1.15rem;
+            color: var(--bacorp-charcoal);
+        }
+
+        .cert-boxes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.85rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .cert-iso-box {
+            background-color: var(--bacorp-bg-soft);
+            border: 1.5px solid var(--bacorp-gray-light);
+            border-radius: var(--radius-md);
+            padding: 0.9rem;
+            text-align: center;
+        }
+
+        .cert-iso-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: var(--bacorp-orange-soft);
+            color: var(--bacorp-orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+        }
+
+        .cert-iso-box strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 0.92rem;
+            color: var(--bacorp-charcoal);
+        }
+
+        .cert-iso-box span {
+            font-size: 0.76rem;
+            color: var(--bacorp-gray-dark);
+        }
+
+        .sunat-verified-list {
+            background-color: #F0FDF4;
+            border: 1px solid #BBF7D0;
+            border-radius: var(--radius-md);
+            padding: 0.95rem 1.1rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.82rem;
+        }
+
+        .sunat-verified-list div {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.2rem 0;
+            border-bottom: 1px dashed #DCFCE7;
+        }
+
+        .sunat-verified-list div:last-child {
+            border-bottom: none;
+        }
+
+        /* ==========================================================================
+           5. RECURSOS GRÁFICOS DE LA MARCA (PÁG. 10 TA3)
+           ========================================================================== */
+        .brand-values-strip {
+            background-color: var(--bacorp-white);
+            border-bottom: 1px solid var(--bacorp-gray-light);
+            padding: 2.25rem 0;
+        }
+
+        .values-strip-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .value-graphic-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-md);
+            background-color: var(--bacorp-bg-soft);
+            border-left: 4px solid var(--bacorp-orange);
+        }
+
+        .value-graphic-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-sm);
+            background-color: var(--bacorp-orange-soft);
+            color: var(--bacorp-orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .value-graphic-item h4 {
+            font-size: 0.98rem;
+            font-weight: 800;
+            margin-bottom: 0.15rem;
+        }
+
+        .value-graphic-item p {
+            font-size: 0.82rem;
+            color: var(--bacorp-gray-dark);
+        }
+
+        /* ==========================================================================
+           6. SECCIÓN NOSOTROS: MISIÓN, VISIÓN, GERENCIA Y ORGANIGRAMA (PÁG. 4-6 TA3)
+           ========================================================================== */
+        .about-section {
+            background-color: var(--bacorp-bg-soft);
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
+            margin-bottom: 4rem;
+        }
+
+        .mv-card {
+            background-color: var(--bacorp-white);
+            border: 1px solid var(--bacorp-gray-light);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--bacorp-orange);
+        }
+
+        .mv-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .mv-card p {
+            font-size: 0.92rem;
+            color: var(--bacorp-gray-dark);
+            line-height: 1.65;
+        }
+
+        /* Organigrama Oficial BACORP (Pág. 6 TA3) */
+        .org-box {
+            background-color: var(--bacorp-white);
+            border: 1px solid var(--bacorp-gray-light);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .org-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .org-top-levels {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .org-node-ceo {
+            background-color: var(--bacorp-charcoal);
+            color: var(--bacorp-white);
+            border: 2px solid var(--bacorp-orange);
+            padding: 0.9rem 2rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            min-width: 290px;
+        }
+
+        .org-node-ceo span {
+            display: block;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--bacorp-orange);
+            font-weight: 700;
+        }
+
+        .org-node-ceo strong {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+        }
+
+        .org-node-staff {
+            background-color: var(--bacorp-bg-soft);
+            border: 1.5px dashed var(--bacorp-gray-dark);
+            padding: 0.55rem 1.5rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: var(--bacorp-charcoal);
+        }
+
+        .org-departments-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+        }
+
+        .org-dept-col {
+            background-color: var(--bacorp-bg-soft);
+            border: 1px solid var(--bacorp-gray-light);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+        }
+
+        .org-dept-title {
+            background-color: var(--bacorp-orange);
+            color: var(--bacorp-white);
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-align: center;
+            padding: 0.6rem;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .org-dept-col:nth-child(even) .org-dept-title {
+            background-color: var(--bacorp-charcoal);
+        }
+
+        .org-tasks li {
+            background-color: var(--bacorp-white);
+            border: 1px solid var(--bacorp-gray-light);
+            border-radius: 6px;
+            padding: 0.55rem 0.75rem;
+            font-size: 0.82rem;
+            font-weight: 500;
+            margin-bottom: 0.55rem;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .org-tasks li:last-child {
+            margin-bottom: 0;
+        }
+
+        .org-tasks li::before {
+            content: '▸';
+            color: var(--bacorp-orange);
+            font-weight: 800;
+        }
+
+        /* ==========================================================================
+           7. UNIDADES DE NEGOCIO: BACORP DUAL | BUSINESS & BACORP DUAL | K-POP
+           ========================================================================== */
+        .division-section {
+            padding: 5.5rem 0;
+        }
+
+        .division-business {
+            background-color: var(--bacorp-white);
+            border-top: 1px solid var(--bacorp-gray-light);
+        }
+
+        .division-kpop {
+            background: linear-gradient(180deg, #181426 0%, #221B38 100%);
+            color: var(--bacorp-white);
+        }
+
+        .division-kpop .section-title,
+        .division-kpop h3 {
+            color: var(--bacorp-white);
+        }
+
+        .division-kpop .section-subtitle {
+            color: #D8B4FE;
+        }
+
+        .division-banner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--bacorp-gray-light);
+        }
+
+        .division-kpop .division-banner {
+            border-bottom-color: rgba(255, 255, 255, 0.14);
+        }
+
+        .postor-badge-card {
+            background-color: var(--bacorp-charcoal);
+            color: var(--bacorp-white);
+            padding: 1rem 1.35rem;
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--bacorp-orange);
+            font-size: 0.82rem;
+        }
+
+        .postor-badge-card strong {
+            color: var(--bacorp-orange);
+            font-size: 0.95rem;
+            display: block;
+        }
+
+        .grid-4-cols {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .grid-3-cols {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
+        }
+
+        .unit-card {
+            background-color: var(--bacorp-bg-soft);
+            border: 1px solid var(--bacorp-gray-light);
+            border-radius: var(--radius-lg);
+            padding: 1.85rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all var(--transition);
+        }
+
+        .unit-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--bacorp-orange);
+        }
+
+        .kpop-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: var(--bacorp-white);
+        }
+
+        .kpop-card:hover {
+            border-color: var(--bacorp-orange);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .unit-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: var(--radius-md);
+            background-color: var(--bacorp-orange);
+            color: var(--bacorp-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .unit-card h3 {
+            font-size: 1.18rem;
+            margin-bottom: 0.65rem;
+        }
+
+        .unit-card p {
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+            opacity: 0.9;
+        }
+
+        .unit-list {
+            border-top: 1px solid rgba(150, 150, 150, 0.25);
+            padding-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            font-size: 0.83rem;
+            font-weight: 500;
+        }
+
+        .unit-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .unit-list li span.dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--bacorp-orange);
+            flex-shrink: 0;
+        }
+
+        /* ==========================================================================
+           8. CATÁLOGO DIGITAL INTERACTIVO Y CARRITO DE COTIZACIÓN (PÁG. 13-14 y 30 TA3)
+           ========================================================================== */
+        .catalog-section {
+            background-color: var(--bacorp-bg-soft);
+        }
+
+        .catalog-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2.75rem;
+        }
+
+        .tab-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-family: var(--font-heading);
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--bacorp-gray-dark);
+            background-color: var(--bacorp-white);
+            border: 1.5px solid var(--bacorp-gray-light);
+            transition: all var(--transition);
+        }
+
+        .tab-btn:hover {
+            border-color: var(--bacorp-orange);
+            color: var(--bacorp-orange);
+        }
+
+        .tab-btn.active {
+            background-color: var(--bacorp-charcoal);
+            color: var(--bacorp-white);
+            border-color: var(--bacorp-charcoal);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tab-btn.active .tab-pill {
+            background-color: var(--bacorp-orange);
+            color: var(--bacorp-white);
+        }
+
+        .tab-pill {
+            font-size: 0.72rem;
+            padding: 0.12rem 0.5rem;
+            border-radius: 999px;
+            background-color: var(--bacorp-gray-light);
+            color: var(--bacorp-charcoal);
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .catalog-card {
+            background-color: var(--bacorp-white);
+            border: 1px solid var(--bacorp-gray-light);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition);
+        }
+
+        .catalog-card.hidden {
+            display: none;
+        }
+
+        .catalog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--bacorp-orange);
+        }
+
+        .catalog-img-box {
+            position: relative;
+            height: 195px;
+            background-color: var(--bacorp-charcoal);
+            overflow: hidden;
+        }
+
+        .catalog-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.45s ease;
+        }
+
+        .catalog-card:hover .catalog-img-box img {
+            transform: scale(1.06);
+        }
+
+        .catalog-badge {
+            position: absolute;
+            top: 0.75rem;
+            left: 0.75rem;
+            padding: 0.28rem 0.7rem;
+            border-radius: 4px;
+            font-family: var(--font-heading);
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .badge-flota {
+            background-color: var(--bacorp-orange);
+            color: var(--bacorp-white);
+        }
+
+        .badge-kpop {
+            background-color: var(--kpop-accent);
+            color: var(--bacorp-white);
+        }
+
+        .catalog-body {
+            padding: 1.35rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .catalog-body h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .catalog-body p {
+            font-size: 0.84rem;
+            color: var(--bacorp-gray-mid);
+            margin-bottom: 1rem;
+        }
+
+        .spec-list {
+            background-color: var(--bacorp-bg-soft);
+            border-radius: var(--radius-sm);
+            padding: 0.75rem;
+            margin-bottom: 1.15rem;
+            font-size: 0.78rem;
+            flex-grow: 1;
+        }
+
+        .spec-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.22rem 0;
+            border-bottom: 1px dashed var(--bacorp-gray-light);
+        }
+
+        .spec-list li:last-child {
+            border-bottom: none;
+        }
+
+        .add-quote-btn {
+            width: 100%;
+            padding: 0.7rem;
+            font-size: 0.82rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .add-quote-btn.added {
+            background-color: var(--iso-green);
+            color: var(--bacorp-white);
+            border-color: var(--iso-green);
+        }
+
+        /* ==========================================================================
+           9. DESEMPEÑO REAL DE VENTAS 2025 VS 2026 (TABLAS PÁG. 15-17 TA3)
+           ========================================================================== */
+        .analytics-section {
+            background-color: var(--bacorp-navy-dark);
+            color: var(--bacorp-white);
+        }
+
+        .analytics-section .section-title {
+            color: var(--bacorp-white);
+        }
+
+        .analytics-section .section-subtitle {
+            color: var(--bacorp-gray-light);
+        }
+
+        .stats-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem 1.35rem;
+            text-align: center;
+        }
+
+        .stat-box strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+            font-weight: 900;
+            color: var(--bacorp-orange);
+            margin-bottom: 0.35rem;
+        }
+
+        .stat-box .stat-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-box .stat-sub {
+            font-size: 0.78rem;
+            color: var(--bacorp-gray-light);
+        }
+
+        /* Gráfico de Barras Comparativo 2025-2026 (Pág. 17 TA3) */
+        .chart-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+        }
+
+        .chart-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-legend {
+            display: flex;
+            gap: 1.25rem;
+            font-size: 0.84rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .legend-swatch {
+            width: 14px;
+            height: 14px;
+            border-radius: 3px;
+        }
+
+        .bars-grid {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            gap: 0.75rem;
+            align-items: end;
+            height: 230px;
+            padding-top: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .month-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            justify-content: flex-end;
+        }
+
+        .bar-pair {
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            width: 100%;
+            justify-content: center;
+            height: 185px;
+        }
+
+        .bar-2025, .bar-2026 {
+            width: 16px;
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            transition: height 0.6s ease;
+        }
+
+        .bar-2025 {
+            background-color: #64748B;
+        }
+
+        .bar-2026 {
+            background-color: var(--bacorp-orange);
+        }
+
+        .month-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-top: 0.6rem;
+            color: var(--bacorp-gray-light);
+        }
+
+        .month-service-tag {
+            font-size: 0.65rem;
+            color: #94A3B8;
+        }
+
+        /* ==========================================================================
+           10. PROCESO DE VENTAS Y FLUJOGRAMA DE 8 ETAPAS (PÁG. 14-15 y 19 TA3)
+           ========================================================================== */
+        .process-section {
+            background-color: var(--bacorp-white);
+        }
+
+        .process-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+        }
+
+        .step-card {
+            background-color: var(--bacorp-bg-soft);
+            border: 1px solid var(--bacorp-gray-light);
+            border-radius: var(--radius-md);
+            padding: 1.35rem;
+            position: relative;
+        }
+
+        .step-num {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background-color: var(--bacorp-orange);
+            color: var(--bacorp-white);
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.85rem;
+        }
+
+        .step-card h4 {
+            font-size: 0.98rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .step-card p {
+            font-size: 0.83rem;
+            color: var(--bacorp-gray-dark);
+        }
+
+        /* ==========================================================================
+           11. FORMULARIO OMNICANAL + CARRITO DE COTIZACIÓN + CRM (PÁG. 20, 35, 44 TA3)
+           ========================================================================== */
+        .contact-section {
+            background-color: var(--bacorp-bg-soft);
+            border-top: 1px solid var(--bacorp-gray-light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.35fr;
+            gap: 2.75rem;
+            align-items: start;
+        }
+
+        .contact-sidebar {
+            background-color: var(--bacorp-charcoal);
+            color: var(--bacorp-white);
+            border-radius: var(--radius-xl);
+            padding: 2.4rem;
+            border-bottom: 5px solid var(--bacorp-orange);
+        }
+
+        .contact-sidebar h3 {
+            color: var(--bacorp-white);
+            font-size: 1.5rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .contact-sidebar > p {
+            color: var(--bacorp-gray-light);
+            font-size: 0.92rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .contact-data-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-data-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.9rem;
+        }
+
+        .contact-data-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background-color: rgba(255, 102, 0, 0.2);
+            color: var(--bacorp-orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-data-item strong {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--bacorp-white);
+        }
+
+        .contact-data-item span {
+            font-size: 0.84rem;
+            color: var(--bacorp-gray-light);
+        }
+
+        .form-card {
+            background-color: var(--bacorp-white);
+            border: 1px solid var(--bacorp-gray-light);
+            border-radius: var(--radius-xl);
+            padding: 2.4rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Resumen del Carrito de Cotización dentro del Formulario */
+        .quote-cart-box {
+            background-color: var(--bacorp-orange-soft);
+            border: 1.5px solid var(--bacorp-orange-border);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .quote-cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.55rem;
+        }
+
+        .quote-cart-header strong {
+            font-family: var(--font-heading);
+            font-size: 0.88rem;
+            color: var(--bacorp-charcoal);
+        }
+
+        .quote-cart-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
+
+        .cart-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background-color: var(--bacorp-white);
+            border: 1px solid var(--bacorp-orange);
+            color: var(--bacorp-charcoal);
+            padding: 0.25rem 0.65rem;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .cart-chip button {
+            color: var(--status-error);
+            font-weight: 800;
+            font-size: 0.9rem;
+            line-height: 1;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.15rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            font-family: var(--font-heading);
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--bacorp-charcoal);
+        }
+
+        .form-label span {
+            color: var(--bacorp-orange);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.78rem 0.95rem;
+            border: 1.5px solid var(--bacorp-gray-light);
+            border-radius: var(--radius-sm);
+            background-color: var(--bacorp-white);
+            color: var(--bacorp-charcoal);
+            font-size: 0.9rem;
+            transition: border-color var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--bacorp-orange);
+        }
+
+        .form-control.error {
+            border-color: var(--status-error);
+            background-color: #FEF2F2;
+        }
+
+        .err-msg {
+            display: none;
+            font-size: 0.75rem;
+            color: var(--status-error);
+            font-weight: 500;
+        }
+
+        .form-group.has-error .err-msg {
+            display: block;
+        }
+
+        /* Confirmación Estilo Hoja de Control CRM (Pág. 20 y 35 TA3) */
+        .crm-confirmation {
+            display: none;
+            background-color: #F8FAFC;
+            border: 2px solid var(--iso-green);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .crm-confirmation.active {
+            display: block;
+        }
+
+        .crm-table-preview {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.25rem 0;
+            font-size: 0.8rem;
+            text-align: left;
+            background-color: var(--bacorp-white);
+        }
+
+        .crm-table-preview th,
+        .crm-table-preview td {
+            border: 1px solid var(--bacorp-gray-light);
+            padding: 0.55rem 0.75rem;
+        }
+
+        .crm-table-preview th {
+            background-color: var(--bacorp-charcoal);
+            color: var(--bacorp-white);
+            font-family: var(--font-heading);
+        }
+
+        /* ==========================================================================
+           12. FOOTER CORPORATIVO OFICIAL
+           ========================================================================== */
+        .footer {
+            background-color: var(--bacorp-navy-dark);
+            color: var(--bacorp-gray-light);
+            padding-top: 4rem;
+            border-top: 4px solid var(--bacorp-orange);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+            gap: 2.25rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-col h4 {
+            color: var(--bacorp-white);
+            font-size: 0.98rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+            font-size: 0.86rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--bacorp-orange);
+        }
+
+        .footer-bottom {
+            padding: 1.5rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+            font-size: 0.78rem;
+            color: #9CA3AF;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 1100px) {
+            .hero-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .grid-4-cols,
+            .catalog-grid,
+            .stats-cards-grid,
+            .org-departments-grid,
+            .process-steps-grid,
+            .values-strip-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .mv-grid,
+            .grid-3-cols {
+                grid-template-columns: 1fr;
+            }
+            .bacorp-brand-divider,
+            .bacorp-brand-slogan {
+                display: none;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .menu-toggle {
+                display: flex;
+            }
+            .nav-menu {
+                position: fixed;
+                top: var(--navbar-height);
+                left: 0;
+                width: 100%;
+                background-color: var(--bacorp-white);
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1.5rem;
+                border-bottom: 3px solid var(--bacorp-orange);
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-140%);
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.3s ease;
+            }
+            .nav-menu.open {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .nav-links {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .bars-grid {
+                overflow-x: auto;
+                min-width: 580px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid-4-cols,
+            .catalog-grid,
+            .stats-cards-grid,
+            .org-departments-grid,
+            .process-steps-grid,
+            .values-strip-grid,
+            .form-grid,
+            .hero-kpis,
+            .cert-boxes-grid {
+                grid-template-columns: 1fr;
+            }
+            .topbar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         1. TOPBAR INSTITUCIONAL CON DATOS REALES (RUC 20608555146 - SANTA ANITA)
+         ========================================================================== -->
+    <div class="topbar">
+        <div class="container topbar-content">
+            <div class="topbar-left">
+                <span class="topbar-item">
+                    <strong>RUC:</strong> 20608555146 (ACTIVO / HABIDO)
+                </span>
+                <span class="topbar-item">
+                    <span class="topbar-badge">PROVEEDOR DEL ESTADO</span> RNP • SEACE • PLADICOP
+                </span>
+                <span class="topbar-item">
+                    📍 Cal. César Vallejo Nro. 474, Santa Anita - Lima
+                </span>
+            </div>
+            <div class="topbar-right">
+                <span class="topbar-item">
+                    <strong>Certificaciones:</strong> ISO 14001 (Ambiental) &amp; ISO 37001 (Antisoborno)
+                </span>
+                <a href="#contacto" class="topbar-item" style="color: #FF8533; font-weight: 700;">
+                    @bacorp_Oficial
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         2. NAVBAR FIJA CON LOGOTIPO OFICIAL VECTORIAL DE BACORP
+         ========================================================================== -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <!-- Recreación SVG Exacta del Logo Oficial BACORP adjunto por el usuario -->
+            <a href="#inicio" class="bacorp-brand-wrap" aria-label="BACORP Servicios Generales S.A.C.">
+                <div class="bacorp-logo-box">
+                    <div class="bacorp-wordmark">
+                        <span class="bacorp-wordmark-main">BACORP</span>
+                        <span class="bacorp-wordmark-sub">SERVICIOS GENERALES S.A.C.</span>
+                    </div>
+                    <!-- Isotipo Oficial: Engranaje Gris Oscuro + Brújula Bicolor (Gris/Naranja #FF6600) -->
+                    <svg class="bacorp-gear-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Isotipo Engranaje y Brújula BACORP">
+                        <!-- Dientes del engranaje (8 dientes industriales) -->
+                        <g fill="#4D4D4D">
+                            <rect x="42" y="4" width="16" height="92" rx="3"/>
+                            <rect x="4" y="42" width="92" height="16" rx="3"/>
+                            <rect x="42" y="4" width="16" height="92" rx="3" transform="rotate(45 50 50)"/>
+                            <rect x="42" y="4" width="16" height="92" rx="3" transform="rotate(-45 50 50)"/>
+                            <circle cx="50" cy="50" r="38"/>
+                        </g>
+                        <!-- Círculo blanco interno y anillo de brújula -->
+                        <circle cx="50" cy="50" r="27" fill="#FFFFFF"/>
+                        <circle cx="50" cy="50" r="22" stroke="#4D4D4D" stroke-width="2.5" fill="#FFFFFF"/>
+                        <!-- Marcas cardinales de la brújula -->
+                        <line x1="50" y1="28" x2="50" y2="33" stroke="#4D4D4D" stroke-width="2.5"/>
+                        <line x1="50" y1="67" x2="50" y2="72" stroke="#4D4D4D" stroke-width="2.5"/>
+                        <line x1="28" y1="50" x2="33" y2="50" stroke="#4D4D4D" stroke-width="2.5"/>
+                        <line x1="67" y1="50" x2="72" y2="50" stroke="#4D4D4D" stroke-width="2.5"/>
+                        <!-- Aguja de la brújula diagonal: Noreste (Gris Oscuro) y Suroeste (Naranja #FF6600) -->
+                        <polygon points="72,24 55,54 45,44" fill="#333333"/>
+                        <polygon points="28,76 45,44 55,54" fill="#FF6600"/>
+                        <circle cx="50" cy="50" r="4" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="bacorp-brand-divider"></div>
+                <div class="bacorp-brand-slogan">
+                    Soluciones que <strong>impulsan</strong> tu <strong>negocio</strong>
+                </div>
+            </a>
+
+            <!-- Botón Menú Móvil -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Enlaces de Navegación -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#linea-business" class="nav-link">BACORP Flotas</a></li>
+                    <li><a href="#linea-kpop" class="nav-link">Módulos K-POP 2F</a></li>
+                    <li><a href="#catalogo" class="nav-link">Catálogo Digital</a></li>
+                    <li><a href="#resultados" class="nav-link">Resultados 2026</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#contacto" class="cart-trigger-btn" title="Ver ítems en tu Carrito de Cotización">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span>Cotizador</span>
+                        <span class="cart-count-badge" id="nav-cart-count">0</span>
+                    </a>
+                    <a href="#contacto" class="btn btn-orange" style="padding: 0.65rem 1.15rem; font-size: 0.82rem;">
+                        Solicitar Cotización
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ==========================================================================
+             3. HERO SECTION ("BACORP DUAL: DOS MUNDOS, UN CLICK")
+             ========================================================================== -->
+        <section class="hero" id="inicio">
+            <div class="container">
+                <div class="hero-grid">
+                    <!-- Columna Izquierda -->
+                    <div>
+                        <div class="hero-campaign-pill">
+                            <span>⚡ CAMPAÑA OFICIAL BACORP DUAL: "DOS MUNDOS, UN CLICK"</span>
+                        </div>
+                        <h1 class="hero-title">
+                            Soluciones que <span class="text-orange">impulsan tu negocio</span> y respaldan al Estado
+                        </h1>
+                        <div class="hero-descriptor">
+                            BACORP | Flotas, equipamiento especializado y logística de módulos para eventos
+                        </div>
+                        <p class="hero-subtitle">
+                            En <strong>BACORP SERVICIOS GENERALES S.A.C.</strong> integramos dos grandes líneas operativas: el suministro de flotas vehiculares (camionetas 4x4, camiones, UTVs, tricimotos) y maquinaria para licitaciones públicas (SEACE/PLADICOP) y empresas privadas, junto con el montaje y alquiler de módulos temáticos para la <strong>Feria KPOP 2F</strong> y eventos masivos.
+                        </p>
+
+                        <div class="hero-actions">
+                            <a href="#linea-business" class="btn btn-orange">
+                                <span>BACORP DUAL | BUSINESS (Flotas)</span>
+                            </a>
+                            <a href="#linea-kpop" class="btn btn-outline-light">
+                                <span>BACORP DUAL | K-POP (Módulos)</span>
+                            </a>
+                        </div>
+
+                        <!-- Indicadores Reales de la TA3 -->
+                        <div class="hero-kpis">
+                            <div class="hero-kpi-item">
+                                <strong>S/ 1.09M</strong>
+                                <span>Ventas Ene-Set 2026 (+58.1%)</span>
+                            </div>
+                            <div class="hero-kpi-item">
+                                <strong>+61.11%</strong>
+                                <span>Crecimiento en Licitaciones</span>
+                            </div>
+                            <div class="hero-kpi-item">
+                                <strong>ISO Dual</strong>
+                                <span>14001 Ambiental &amp; 37001</span>
+                            </div>
+                            <div class="hero-kpi-item">
+                                <strong>100%</strong>
+                                <span>Cumplimiento SEACE / RNP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Ficha de Respaldo Certificado e Identidad Legal -->
+                    <div class="hero-cert-card">
+                        <div class="cert-card-badge">RESPALDO CERTIFICADO E INSTITUCIONAL</div>
+                        <h3>Doble Certificación ISO &amp; Proveedor Validado</h3>
+
+                        <div class="cert-boxes-grid">
+                            <div class="cert-iso-box">
+                                <div class="cert-iso-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    </svg>
+                                </div>
+                                <strong>ISO 37001</strong>
+                                <span>Sistema de Gestión Antisoborno</span>
+                            </div>
+                            <div class="cert-iso-box">
+                                <div class="cert-iso-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                        <path d="M2 22c1.25-1.25 2.5-2.5 3.5-2.5 1.5 0 2 1.5 3.5 1.5s2-1.5 3.5-1.5 2 1.5 3.5 1.5 2.25-1.25 3.5-2.5"></path>
+                                        <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7z"></path>
+                                    </svg>
+                                </div>
+                                <strong>ISO 14001</strong>
+                                <span>Sistema de Gestión Ambiental</span>
+                            </div>
+                        </div>
+
+                        <div class="sunat-verified-list">
+                            <div><span>Razón Social:</span> <strong>BACORP SERVICIOS GENERALES S.A.C.</strong></div>
+                            <div><span>Número de RUC:</span> <strong>20608555146 (Activo / Habido)</strong></div>
+                            <div><span>Gerente General:</span> <strong>Bill Ángel Achahui Cortés</strong></div>
+                            <div><span>CIIU Principal:</span> <strong>4659 - Maquinaria, Equipo y Vehículos</strong></div>
+                            <div><span>Sede Operativa:</span> <strong>Santa Anita, Lima (Despacho Nacional)</strong></div>
+                        </div>
+
+                        <a href="#catalogo" class="btn btn-dark" style="width: 100%; padding: 0.78rem;">
+                            Explorar Catálogo Digital 2026 ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             4. LOS 4 RECURSOS GRÁFICOS OFICIALES DEL MANUAL DE MARCA (PÁG. 10 TA3)
+             ========================================================================== -->
+        <section class="brand-values-strip" aria-label="Valores y recursos gráficos de BACORP">
+            <div class="container">
+                <div class="values-strip-grid">
+                    <div class="value-graphic-item">
+                        <div class="value-graphic-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Engranaje</h4>
+                            <p>Trabajo, capacidad operativa y experiencia técnica.</p>
+                        </div>
+                    </div>
+
+                    <div class="value-graphic-item">
+                        <div class="value-graphic-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Brújula</h4>
+                            <p>Dirección estratégica y soluciones integrales.</p>
+                        </div>
+                    </div>
+
+                    <div class="value-graphic-item">
+                        <div class="value-graphic-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Manos y Alianzas</h4>
+                            <p>Confianza y relaciones sólidas con el Estado y privados.</p>
+                        </div>
+                    </div>
+
+                    <div class="value-graphic-item">
+                        <div class="value-graphic-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                <polyline points="13 17 18 12 13 7"></polyline>
+                                <polyline points="6 17 11 12 6 7"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Flechas de Progreso</h4>
+                            <p>Crecimiento continuo (+58.13% en ventas 2026).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             5. SECCIÓN NOSOTROS: MISIÓN, VISIÓN Y ORGANIGRAMA OFICIAL (PÁG. 4-6 TA3)
+             ========================================================================== -->
+        <section class="section-padding about-section" id="nosotros">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag tag-orange">01 • Nuestra Empresa (RUC 20608555146)</span>
+                    <h2 class="section-title">¿Quiénes Somos en BACORP?</h2>
+                    <p class="section-subtitle">
+                        Liderada por su Gerente General <strong>Bill Ángel Achahui Cortés</strong>, BACORP SERVICIOS GENERALES S.A.C. opera desde Santa Anita (Lima) brindando soluciones logísticas integrales con 5 prácticas de responsabilidad social, gestión ambiental (ISO 14001) y prevención del soborno (ISO 37001).
+                    </p>
+                </div>
+
+                <!-- Tarjetas de Misión, Visión y Liderazgo -->
+                <div class="mv-grid">
+                    <article class="mv-card">
+                        <h3>🎯 Nuestra Misión</h3>
+                        <p>
+                            Brindar soluciones integrales mediante diferentes recursos y servicios de gestión logística para entidades públicas y privadas, desarrollando nuestras actividades con responsabilidad, cumplimiento y orientación al cliente. Generamos valor mediante una adecuada gestión de proveedores, procesos de contratación, logística y operaciones, respaldada por prácticas de responsabilidad social, gestión ambiental y prevención del soborno.
+                        </p>
+                    </article>
+
+                    <article class="mv-card">
+                        <h3>🚀 Nuestra Visión</h3>
+                        <p>
+                            Ser una empresa reconocida en el mercado nacional por su capacidad para gestionar contrataciones públicas y privadas, suministrar bienes y equipos especializados y desarrollar servicios logísticos integrales, fortaleciendo progresivamente nuestras capacidades operativas, tecnológicas y comerciales, bajo criterios de eficiencia, transparencia, responsabilidad y sostenibilidad.
+                        </p>
+                    </article>
+
+                    <article class="mv-card">
+                        <h3>🤝 Gestión Transparente y Valores</h3>
+                        <p>
+                            Mostramos de manera cercana y auténtica nuestro proceso operativo bajo la supervisión directa de <strong>Bill Ángel Achahui Cortés</strong>: desde la evaluación de bases en SEACE/PLADICOP y homologación de flotas, hasta el montaje en campo de módulos para ferias. Nuestros pilares son: <strong>Responsabilidad, Honestidad, Trabajo en Equipo y Mejora Continua</strong>.
+                        </p>
+                    </article>
+                </div>
+
+                <!-- Organigrama Estructural de BACORP (Pág. 6 TA3) -->
+                <div class="org-box">
+                    <div class="org-header">
+                        <span class="section-tag tag-orange">Estructura Organizacional</span>
+                        <h3>Organigrama Operativo de BACORP SERVICIOS GENERALES S.A.C.</h3>
+                    </div>
+
+                    <div class="org-top-levels">
+                        <div class="org-node-ceo">
+                            <span>Gerencia General / Representante Legal</span>
+                            <strong>Bill Ángel Achahui Cortés</strong>
+                        </div>
+                        <div class="org-node-staff">
+                            ⚖️ Asesoría Externa (Soporte Legal y Contable Tributario)
+                        </div>
+                    </div>
+
+                    <div class="org-departments-grid">
+                        <!-- Área Comercial -->
+                        <div class="org-dept-col">
+                            <div class="org-dept-title">1. Área Comercial</div>
+                            <ul class="org-tasks">
+                                <li>Búsqueda de licitaciones SEACE / PLADICOP</li>
+                                <li>Revisión de TDR y bases integradas</li>
+                                <li>Elaboración de propuestas técnicas y económicas</li>
+                                <li>Relación con entidades y expositores K-POP</li>
+                            </ul>
+                        </div>
+
+                        <!-- Logística -->
+                        <div class="org-dept-col">
+                            <div class="org-dept-title">2. Logística</div>
+                            <ul class="org-tasks">
+                                <li>Gestión y homologación de proveedores</li>
+                                <li>Cotizaciones y órdenes de compra</li>
+                                <li>Importación directa y transporte</li>
+                                <li>Almacén (Santa Anita) y distribución nacional</li>
+                            </ul>
+                        </div>
+
+                        <!-- Administración y Finanzas -->
+                        <div class="org-dept-col">
+                            <div class="org-dept-title">3. Administración y Finanzas</div>
+                            <ul class="org-tasks">
+                                <li>Evaluación económica y control de márgenes</li>
+                                <li>Pagos, facturación electrónica y cobranza</li>
+                                <li>Capital de trabajo y gestión de factoring</li>
+                                <li>Certificaciones ISO 14001 / 37001 y cumplimiento</li>
+                            </ul>
+                        </div>
+
+                        <!-- Operaciones -->
+                        <div class="org-dept-col">
+                            <div class="org-dept-title">4. Operaciones</div>
+                            <ul class="org-tasks">
+                                <li>Ejecución de contratos y montaje de módulos</li>
+                                <li>Seguimiento de la ejecución en campo</li>
+                                <li>Acta de entrega y conformidad del cliente</li>
+                                <li>Seguimiento postventa y satisfacción</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             6. LÍNEA 1: BACORP DUAL | BUSINESS (FLOTAS, MAQUINARIA Y LICITACIONES)
+             ========================================================================== -->
+        <section class="division-section division-business" id="linea-business">
+            <div class="container">
+                <div class="division-banner">
+                    <div>
+                        <span class="section-tag tag-orange">Sub-marca 01 • BACORP Flotas (B2G / B2B)</span>
+                        <h2 class="section-title">BACORP DUAL | BUSINESS: Vehículos y Equipos Especializados</h2>
+                        <p class="section-subtitle" style="max-width: 700px;">
+                            Principal motor de ingresos de BACORP (+61.11% de crecimiento en 2026). Proveemos flotas vehiculares, movilidad menor, maquinaria pesada y equipos industriales mediante licitaciones públicas (SEACE/PLADICOP) y contratos corporativos.
+                        </p>
+                    </div>
+                    <div class="postor-badge-card">
+                        <strong>Récord Verificado en Contratación Pública</strong>
+                        <span>Adjudicaciones destacadas en La Libertad (Municipalidad Distrital de Sitabamba / Santiago de Chuco) y Lima Metropolitana.</span>
+                    </div>
+                </div>
+
+                <div class="grid-4-cols">
+                    <article class="unit-card">
+                        <div>
+                            <div class="unit-icon">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                    <rect x="1" y="3" width="15" height="13"></rect>
+                                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                                </svg>
+                            </div>
+                            <h3>Camionetas 4x4 y Camiones de Carga</h3>
+                            <p>Suministro de camionetas de trabajo (como Toyota Hilux 4x4) y camiones para transporte de personal y carga general.</p>
+                        </div>
+                        <ul class="unit-list">
+                            <li><span class="dot"></span><span>Toyota Hilux 4x4 (2.7L / 4 cilindros)</span></li>
+                            <li><span class="dot"></span><span>Camiones baranda, furgón y cisterna</span></li>
+                            <li><span class="dot"></span><span>Mantenimiento preventivo y seguro</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="unit-card">
+                        <div>
+                            <div class="unit-icon">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                                </svg>
+                            </div>
+                            <h3>UTVs Todo Terreno y Tricimotos Eléctricas</h3>
+                            <p>Soluciones de movilidad táctica para geografía agreste y movilidad menor ecológica para gestión municipal.</p>
+                        </div>
+                        <ul class="unit-list">
+                            <li><span class="dot"></span><span>Vehículos UTV 4x4 todo terreno</span></li>
+                            <li><span class="dot"></span><span>Tricimotos eléctricas de carga/serenazgo</span></li>
+                            <li><span class="dot"></span><span>Despacho a Lima, Callao y provincias</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="unit-card">
+                        <div>
+                            <div class="unit-icon">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                    <path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"></path>
+                                    <circle cx="6.5" cy="16.5" r="2.5"></circle>
+                                    <circle cx="16.5" cy="16.5" r="2.5"></circle>
+                                </svg>
+                            </div>
+                            <h3>Maquinaria Pesada de Línea Amarilla</h3>
+                            <p>Equipamiento de alto rendimiento para obras públicas, mantenimiento vial y proyectos de infraestructura regional.</p>
+                        </div>
+                        <ul class="unit-list">
+                            <li><span class="dot"></span><span>Excavadoras hidráulicas</span></li>
+                            <li><span class="dot"></span><span>Retroexcavadoras multipropósito</span></li>
+                            <li><span class="dot"></span><span>Cargadores frontales de gran capacidad</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="unit-card">
+                        <div>
+                            <div class="unit-icon">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                </svg>
+                            </div>
+                            <h3>Equipos Especializados e Industriales</h3>
+                            <p>Suministro al por mayor de maquinaria y equipo especializado (CIIU 4659) adaptado a las bases de cada entidad.</p>
+                        </div>
+                        <ul class="unit-list">
+                            <li><span class="dot"></span><span>Generadores eléctricos industriales</span></li>
+                            <li><span class="dot"></span><span>Hidrolavadoras de alta presión</span></li>
+                            <li><span class="dot"></span><span>Equipos de limpieza industrial</span></li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             7. LÍNEA 2: BACORP DUAL | K-POP & EVENTOS (MÓDULOS FERIA KPOP 2F - PÁG. 30 TA3)
+             ========================================================================== -->
+        <section class="division-section division-kpop" id="linea-kpop">
+            <div class="container">
+                <div class="division-banner">
+                    <div>
+                        <span class="section-tag tag-kpop">Sub-marca 02 • BACORP Eventos &amp; Feria KPOP 2F</span>
+                        <h2 class="section-title">BACORP DUAL | K-POP: Alquiler de Módulos para Eventos</h2>
+                        <p class="section-subtitle" style="max-width: 720px;">
+                            Nuestros módulos K-POP están diseñados para crear espacios atractivos, funcionales y seguros en ferias temáticas (como la <strong>Feria KPOP 2F</strong>), activaciones, conciertos y eventos corporativos. Instalación rápida de 4 a 6 horas.
+                        </p>
+                    </div>
+                    <div class="postor-badge-card" style="background: rgba(255,255,255,0.08);">
+                        <strong>Instalación Rápida y Segura</strong>
+                        <span>Estructura ligera y resistente con paneles modulares y acabados de alta calidad.</span>
+                    </div>
+                </div>
+
+                <!-- 3 Modelos Oficiales del Catálogo de la TA3 (Página 30) -->
+                <div class="grid-3-cols">
+                    <article class="unit-card kpop-card">
+                        <div>
+                            <div class="unit-icon">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                    <path d="M3 21h18"></path>
+                                    <path d="M5 21V7l7-4 7 4v14"></path>
+                                </svg>
+                            </div>
+                            <h3>01. Módulo Básico K-POP</h3>
+                            <p>Ideal para emprendedores, tiendas fanmade y expositores que buscan un stand funcional y visualmente atractivo en la Feria KPOP 2F.</p>
+                        </div>
+                        <ul class="unit-list">
+                            <li><span class="dot"></span><span><strong>Dimensiones:</strong> 6 m (largo) x 3 m (ancho) x 3 m (alto)</span></li>
+                            <li><span class="dot"></span><span>Paneles modulares con diseño temático</span></li>
+                            <li><span class="dot"></span><span>Sistema de iluminación LED básica incluida</span></li>
+                            <li><span class="dot"></span><span>Montaje en 4 a 6 horas según ubicación</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="unit-card kpop-card" style="border-color: var(--bacorp-orange);">
+                        <div>
+                            <div class="unit-icon">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                            </div>
+                            <h3>02. Módulo Premium K-POP</h3>
+                            <p>Espacio de alto impacto con tecnología audiovisual integrada para marcas, random play dance, activaciones y grupos de baile.</p>
+                        </div>
+                        <ul class="unit-list">
+                            <li><span class="dot"></span><span><strong>Dimensiones:</strong> 8 m (largo) x 4 m (ancho) x 3.5 m (alto)</span></li>
+                            <li><span class="dot"></span><span>Pantallas LED y sistema de sonido integrado</span></li>
+                            <li><span class="dot"></span><span>Espacios de interacción y zona de fotos (Photozone)</span></li>
+                            <li><span class="dot"></span><span>Estructura reforzada y acabados de primera</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="unit-card kpop-card">
+                        <div>
+                            <div class="unit-icon">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                            <h3>03. Módulo Personalizado</h3>
+                            <p>Adaptado íntegramente a la temática de tu evento corporativo, feria o activación BTL y a la identidad visual de tu marca.</p>
+                        </div>
+                        <ul class="unit-list">
+                            <li><span class="dot"></span><span><strong>Dimensiones:</strong> Diseño según requerimiento del cliente</span></li>
+                            <li><span class="dot"></span><span>Integración completa de marca (Branding 360°)</span></li>
+                            <li><span class="dot"></span><span>Ambientación luminosa y escenográfica completa</span></li>
+                            <li><span class="dot"></span><span>Asesoría técnica antes, durante y post-feria</span></li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             8. CATÁLOGO DIGITAL INTERACTIVO CON "CARRITO DE COTIZACIÓN" (PÁG. 13-14 y 30)
+             ========================================================================== -->
+        <section class="section-padding catalog-section" id="catalogo">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag tag-orange">Campaña: "BACORP en línea: cotiza tu flota y tu evento"</span>
+                    <h2 class="section-title">Catálogo Digital de Servicios y Carrito de Cotización</h2>
+                    <p class="section-subtitle">
+                        Selecciona los vehículos, maquinarias o módulos K-POP que necesitas para agregarlos a tu <strong>Carrito de Cotización B2B/B2G</strong> y solicitar una propuesta formal sin compromiso.
+                    </p>
+                </div>
+
+                <!-- Pestañas de Filtro -->
+                <div class="catalog-tabs" role="tablist">
+                    <button type="button" class="tab-btn active" data-filter="todos">
+                        <span>Todo el Catálogo BACORP</span>
+                        <span class="tab-pill">8</span>
+                    </button>
+                    <button type="button" class="tab-btn" data-filter="business">
+                        <span>02 • Vehículos y Equipos (Business)</span>
+                        <span class="tab-pill">5</span>
+                    </button>
+                    <button type="button" class="tab-btn" data-filter="kpop">
+                        <span>03 • Módulos K-POP para Eventos</span>
+                        <span class="tab-pill">3</span>
+                    </button>
+                </div>
+
+                <!-- Grid de 8 Productos Oficiales del Catálogo TA3 Pág. 30 -->
+                <div class="catalog-grid" id="catalog-grid">
+                    <!-- 1. Toyota Hilux 4x4 (Ficha exacta Pág. 30 TA3) -->
+                    <article class="catalog-card" data-category="business">
+                        <div class="catalog-img-box">
+                            <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=800&q=80" alt="Toyota Hilux 4x4 Camioneta de trabajo">
+                            <span class="catalog-badge badge-flota">BACORP Flotas</span>
+                        </div>
+                        <div class="catalog-body">
+                            <h3>Toyota Hilux 4x4 - Camioneta de Trabajo</h3>
+                            <p>Transporte de personal, inspecciones técnicas y operaciones en campo para entidades y empresas.</p>
+                            <ul class="spec-list">
+                                <li><span>Capacidad:</span> <strong>5 pasajeros + carga</strong></li>
+                                <li><span>Motor:</span> <strong>2.7 L / 4 cilindros</strong></li>
+                                <li><span>Tracción / Comb.:</span> <strong>4x4 / Gasolina o Diésel</strong></li>
+                                <li><span>Condición:</span> <strong>Mantenimiento y seguro incl.</strong></li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-orange add-quote-btn" data-item="Camioneta Toyota Hilux 4x4 (2.7L / 5 pasajeros)" data-line="business">
+                                + Añadir al Carrito de Cotización
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- 2. Camiones de Carga y Distribución -->
+                    <article class="catalog-card" data-category="business">
+                        <div class="catalog-img-box">
+                            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80" alt="Camiones de Carga y Distribución BACORP">
+                            <span class="catalog-badge badge-flota">BACORP Flotas</span>
+                        </div>
+                        <div class="catalog-body">
+                            <h3>Camiones de Carga y Transporte</h3>
+                            <p>Unidades para distribución de materiales, abastecimiento logístico y carga general o especializada.</p>
+                            <ul class="spec-list">
+                                <li><span>Aplicación:</span> <strong>Carga general y especializada</strong></li>
+                                <li><span>Configuración:</span> <strong>Furgón / Baranda / Cisterna</strong></li>
+                                <li><span>Modalidad:</span> <strong>Licitación SEACE / B2B</strong></li>
+                                <li><span>Cobertura:</span> <strong>Lima y Provincias</strong></li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-orange add-quote-btn" data-item="Camión de Carga y Distribución Logística" data-line="business">
+                                + Añadir al Carrito de Cotización
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- 3. Maquinaria Pesada (Excavadoras, Retroexcavadoras, Cargadores) -->
+                    <article class="catalog-card" data-category="business">
+                        <div class="catalog-img-box">
+                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Maquinaria Pesada Excavadoras y Retroexcavadoras">
+                            <span class="catalog-badge badge-flota">Maquinaria Pesada</span>
+                        </div>
+                        <div class="catalog-body">
+                            <h3>Excavadoras, Retroexcavadoras y Cargadores</h3>
+                            <p>Maquinaria pesada para proyectos municipales, obras civiles y movimiento de tierras.</p>
+                            <ul class="spec-list">
+                                <li><span>Equipos:</span> <strong>Excavadoras / Retroexcavadoras</strong></li>
+                                <li><span>Línea Amarilla:</span> <strong>Cargadores frontales</strong></li>
+                                <li><span>Garantía:</span> <strong>Conformidad y postventa</strong></li>
+                                <li><span>CIIU:</span> <strong>4659 - Maquinaria y Equipo</strong></li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-orange add-quote-btn" data-item="Maquinaria Pesada (Excavadora / Retroexcavadora / Cargador)" data-line="business">
+                                + Añadir al Carrito de Cotización
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- 4. UTVs Todo Terreno y Tricimotos Eléctricas -->
+                    <article class="catalog-card" data-category="business">
+                        <div class="catalog-img-box">
+                            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80" alt="UTV Todo Terreno y Movilidad Menor">
+                            <span class="catalog-badge badge-flota">Movilidad Táctica</span>
+                        </div>
+                        <div class="catalog-body">
+                            <h3>UTVs Todo Terreno &amp; Tricimotos Eléctricas</h3>
+                            <p>Vehículos utilitarios para zonas rurales/agrestes y tricimotos eléctricas para servicios municipales.</p>
+                            <ul class="spec-list">
+                                <li><span>Modelos:</span> <strong>UTV 4x4 / Tricimoto Eléctrica</strong></li>
+                                <li><span>Gestión:</span> <strong>Certificación Ambiental ISO 14001</strong></li>
+                                <li><span>Uso:</span> <strong>Patrullaje, supervisión y carga</strong></li>
+                                <li><span>Entrega:</span> <strong>Según bases o disponibilidad</strong></li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-orange add-quote-btn" data-item="UTV Todo Terreno / Tricimoto Eléctrica" data-line="business">
+                                + Añadir al Carrito de Cotización
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- 5. Equipos Especializados (Hidrolavadoras, Generadores, Limpieza) -->
+                    <article class="catalog-card" data-category="business">
+                        <div class="catalog-img-box">
+                            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80" alt="Equipos Especializados Generadores e Hidrolavadoras">
+                            <span class="catalog-badge badge-flota">Equipos Especializados</span>
+                        </div>
+                        <div class="catalog-body">
+                            <h3>Generadores Eléctricos e Hidrolavadoras</h3>
+                            <p>Provisión de generadores eléctricos, hidrolavadoras industriales y maquinaria de saneamiento.</p>
+                            <ul class="spec-list">
+                                <li><span>Energía:</span> <strong>Generadores eléctricos</strong></li>
+                                <li><span>Saneamiento:</span> <strong>Hidrolavadoras industriales</strong></li>
+                                <li><span>Mantenimiento:</span> <strong>Equipos de limpieza industrial</strong></li>
+                                <li><span>Soporte:</span> <strong>Ficha técnica verificada</strong></li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-orange add-quote-btn" data-item="Equipos Especializados (Generadores / Hidrolavadoras)" data-line="business">
+                                + Añadir al Carrito de Cotización
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- 6. Módulo Básico K-POP (6m x 3m x 3m) -->
+                    <article class="catalog-card" data-category="kpop">
+                        <div class="catalog-img-box">
+                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80" alt="Módulo Básico K-POP 6x3x3m">
+                            <span class="catalog-badge badge-kpop">Feria KPOP 2F</span>
+                        </div>
+                        <div class="catalog-body">
+                            <h3>Módulo Básico K-POP (6m x 3m x 3m)</h3>
+                            <p>Espacio modular ligero y resistente para expositores y tiendas en ferias temáticas K-POP.</p>
+                            <ul class="spec-list">
+                                <li><span>Medidas estándar:</span> <strong>6m (largo) x 3m (ancho) x 3m (alto)</strong></li>
+                                <li><span>Estructura:</span> <strong>Paneles con diseño temático</strong></li>
+                                <li><span>Iluminación:</span> <strong>Iluminación LED básica</strong></li>
+                                <li><span>Instalación:</span> <strong>En 4 a 6 horas (según ubicación)</strong></li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-orange add-quote-btn" data-item="Módulo Básico K-POP (6m x 3m x 3m)" data-line="kpop">
+                                + Añadir al Carrito de Cotización
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- 7. Módulo Premium K-POP (8m x 4m x 3.5m) -->
+                    <article class="catalog-card" data-category="kpop">
+                        <div class="catalog-img-box">
+                            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Módulo Premium K-POP 8x4x3.5m">
+                            <span class="catalog-badge badge-kpop">Feria KPOP 2F</span>
+                        </div>
+                        <div class="catalog-body">
+                            <h3>Módulo Premium K-POP (8m x 4m x 3.5m)</h3>
+                            <p>Escenario modular con equipamiento audiovisual para experiencias interactivas y conciertos.</p>
+                            <ul class="spec-list">
+                                <li><span>Medidas:</span> <strong>8m (largo) x 4m (ancho) x 3.5m (alto)</strong></li>
+                                <li><span>Audiovisual:</span> <strong>Pantallas LED y sonido</strong></li>
+                                <li><span>Experiencia:</span> <strong>Espacios de interacción y fotos</strong></li>
+                                <li><span>Seguridad:</span> <strong>Montaje rápido y seguro</strong></li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-orange add-quote-btn" data-item="Módulo Premium K-POP (8m x 4m x 3.5m con LED y sonido)" data-line="kpop">
+                                + Añadir al Carrito de Cotización
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- 8. Módulo Personalizado K-POP y Eventos -->
+                    <article class="catalog-card" data-category="kpop">
+                        <div class="catalog-img-box">
+                            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80" alt="Módulo Personalizado Eventos y Ferias">
+                            <span class="catalog-badge badge-kpop">Eventos &amp; K-POP</span>
+                        </div>
+                        <div class="catalog-body">
+                            <h3>Módulo Personalizado para Eventos</h3>
+                            <p>Cada módulo se adapta a la temática de tu evento y a la imagen corporativa de tu marca.</p>
+                            <ul class="spec-list">
+                                <li><span>Dimensiones:</span> <strong>Diseño según requerimiento</strong></li>
+                                <li><span>Personalización:</span> <strong>Integración total de marca</strong></li>
+                                <li><span>Acabados:</span> <strong>Ambientación completa</strong></li>
+                                <li><span>Atención:</span> <strong>Soporte durante toda la feria</strong></li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-orange add-quote-btn" data-item="Módulo Personalizado para Eventos / K-POP" data-line="kpop">
+                                + Añadir al Carrito de Cotización
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             9. RESULTADOS COMERCIALES REALES 2025 VS 2026 (PÁG. 15-17 TA3)
+             ========================================================================== -->
+        <section class="section-padding analytics-section" id="resultados">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag tag-dark">Transparencia y Crecimiento Sostenido</span>
+                    <h2 class="section-title">Evolución Comercial BACORP (2025 – 2026)</h2>
+                    <p class="section-subtitle">
+                        En el periodo de enero a setiembre de 2026, BACORP alcanzó ventas totales por <strong>S/ 1,094,628</strong>, logrando un incremento de <strong>S/ 402,398 (+58.13%)</strong> respecto al mismo periodo de 2025.
+                    </p>
+                </div>
+
+                <!-- 4 Tarjetas de Indicadores Exactos -->
+                <div class="stats-cards-grid">
+                    <div class="stat-box">
+                        <strong>S/ 1,094,628</strong>
+                        <div class="stat-title">Ventas Totales (Ene-Set 2026)</div>
+                        <div class="stat-sub">Frente a S/ 692,230 en 2025 (+58.13%)</div>
+                    </div>
+                    <div class="stat-box">
+                        <strong>S/ 1,080,367</strong>
+                        <div class="stat-title">Licitaciones Públicas 2026</div>
+                        <div class="stat-sub">Crecimiento de +61.11% vs. S/ 670,600 (2025)</div>
+                    </div>
+                    <div class="stat-box">
+                        <strong>S/ 227,187</strong>
+                        <div class="stat-title">Pico Mensual (Agosto 2026)</div>
+                        <div class="stat-sub">+34.81% respecto a Agosto 2025</div>
+                    </div>
+                    <div class="stat-box">
+                        <strong>&lt; 18 Horas</strong>
+                        <div class="stat-title">Tiempo de Respuesta Meta</div>
+                        <div class="stat-sub">Con 80% de seguimiento postventa</div>
+                    </div>
+                </div>
+
+                <!-- Gráfico Comparativo Enero - Setiembre 2025 vs 2026 (Pág. 16-17 TA3) -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <h3 style="color: #FFFFFF; font-size: 1.2rem;">Cuadro de Comparación Mensual de Ventas 2025 – 2026 (En Soles S/)</h3>
+                            <p style="font-size: 0.82rem; color: #CBD5E1;">Ene-Abr: Alquiler de Módulos KPOP 2F | May-Set: BACORP Licitaciones Públicas</p>
+                        </div>
+                        <div class="chart-legend">
+                            <span class="legend-item"><span class="legend-swatch" style="background:#64748B;"></span> Año 2025 (S/ 692,230)</span>
+                            <span class="legend-item"><span class="legend-swatch" style="background:#FF6600;"></span> Año 2026 (S/ 1,094,628)</span>
+                        </div>
+                    </div>
+
+                    <div class="bars-grid">
+                        <!-- Enero -->
+                        <div class="month-col">
+                            <div class="bar-pair">
+                                <div class="bar-2025" style="height: 12%;" title="Ene 2025: S/ 9,170"></div>
+                                <div class="bar-2026" style="height: 14%;" title="Ene 2026: S/ 10,169 (+10.89%)"></div>
+                            </div>
+                            <span class="month-label">Enero</span>
+                            <span class="month-service-tag">KPOP 2F</span>
+                        </div>
+                        <!-- Febrero -->
+                        <div class="month-col">
+                            <div class="bar-pair">
+                                <div class="bar-2025" style="height: 8%;" title="Feb 2025: S/ 4,589"></div>
+                                <div class="bar-2026" style="height: 2%;" title="Feb 2026: S/ 0"></div>
+                            </div>
+                            <span class="month-label">Febrero</span>
+                            <span class="month-service-tag">KPOP 2F</span>
+                        </div>
+                        <!-- Marzo -->
+                        <div class="month-col">
+                            <div class="bar-pair">
+                                <div class="bar-2025" style="height: 2%;" title="Mar 2025: S/ 0"></div>
+                                <div class="bar-2026" style="height: 8%;" title="Mar 2026: S/ 4,092"></div>
+                            </div>
+                            <span class="month-label">Marzo</span>
+                            <span class="month-service-tag">KPOP 2F</span>
+                        </div>
+                        <!-- Abril -->
+                        <div class="month-col">
+                            <div class="bar-pair">
+                                <div class="bar-2025" style="height: 10%;" title="Abr 2025: S/ 7,871"></div>
+                                <div class="bar-2026" style="height: 2%;" title="Abr 2026: S/ 0"></div>
+                            </div>
+                            <span class="month-label">Abril</span>
+                            <span class="month-service-tag">KPOP 2F</span>
+                        </div>
+                        <!-- Mayo -->
+                        <div class="month-col">
+                            <div class="bar-pair">
+                                <div class="bar-2025" style="height: 68%;" title="May 2025: S/ 156,872"></div>
+                                <div class="bar-2026" style="height: 94%;" title="May 2026: S/ 216,525 (+38.03%)"></div>
+                            </div>
+                            <span class="month-label">Mayo</span>
+                            <span class="month-service-tag">Licitaciones</span>
+                        </div>
+                        <!-- Junio -->
+                        <div class="month-col">
+                            <div class="bar-pair">
+                                <div class="bar-2025" style="height: 77%;" title="Jun 2025: S/ 178,012"></div>
+                                <div class="bar-2026" style="height: 94%;" title="Jun 2026: S/ 215,678 (+21.16%)"></div>
+                            </div>
+                            <span class="month-label">Junio</span>
+                            <span class="month-service-tag">Licitaciones</span>
+                        </div>
+                        <!-- Julio -->
+                        <div class="month-col">
+                            <div class="bar-pair">
+                                <div class="bar-2025" style="height: 73%;" title="Jul 2025: S/ 167,190"></div>
+                                <div class="bar-2026" style="height: 89%;" title="Jul 2026: S/ 203,428 (+21.67%)"></div>
+                            </div>
+                            <span class="month-label">Julio</span>
+                            <span class="month-service-tag">Licitaciones</span>
+                        </div>
+                        <!-- Agosto -->
+                        <div class="month-col">
+                            <div class="bar-pair">
+                                <div class="bar-2025" style="height: 74%;" title="Ago 2025: S/ 168,526"></div>
+                                <div class="bar-2026" style="height: 100%;" title="Ago 2026: S/ 227,187 (+34.81%)"></div>
+                            </div>
+                            <span class="month-label">Agosto</span>
+                            <span class="month-service-tag">Licitaciones</span>
+                        </div>
+                        <!-- Setiembre -->
+                        <div class="month-col">
+                            <div class="bar-pair">
+                                <div class="bar-2025" style="height: 2%;" title="Set 2025: S/ 0"></div>
+                                <div class="bar-2026" style="height: 95%;" title="Set 2026: S/ 217,549"></div>
+                            </div>
+                            <span class="month-label">Setiembre</span>
+                            <span class="month-service-tag">Licitaciones</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             10. FLUJOGRAMA Y PROCESO DE VENTAS EN 8 ETAPAS (PÁG. 14-15 y 19 TA3)
+             ========================================================================== -->
+        <section class="section-padding process-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag tag-orange">Gestión Comercial Estandarizada</span>
+                    <h2 class="section-title">Nuestro Proceso de Venta y Postventa en 8 Etapas</h2>
+                    <p class="section-subtitle">
+                        Gestionamos cada oportunidad como un ciclo comercial completo, desde la identificación del requerimiento hasta la conformidad y el seguimiento postventa.
+                    </p>
+                </div>
+
+                <div class="catalog-tabs" style="margin-bottom: 2rem;">
+                    <button type="button" class="tab-btn active" id="btn-proc-licitacion">
+                        Proceso de Licitación Pública (B2G / B2B)
+                    </button>
+                    <button type="button" class="tab-btn" id="btn-proc-kpop">
+                        Proceso de Alquiler de Módulos KPOP 2F
+                    </button>
+                </div>
+
+                <!-- 8 Pasos Licitaciones -->
+                <div class="process-steps-grid" id="steps-licitacion">
+                    <div class="step-card"><div class="step-num">1</div><h4>Prospección de Oportunidades</h4><p>Búsqueda diaria de procedimientos de selección en SEACE / PLADICOP y clientes privados.</p></div>
+                    <div class="step-card"><div class="step-num">2</div><h4>Evaluación de las Bases</h4><p>Revisión técnica exhaustiva de TDR, especificaciones técnicas y requisitos de calificación.</p></div>
+                    <div class="step-card"><div class="step-num">3</div><h4>Cotización de Proveedores</h4><p>Validación de stock, tiempos de importación y homologación con fabricantes.</p></div>
+                    <div class="step-card"><div class="step-num">4</div><h4>Elaboración del Precio</h4><p>Cálculo riguroso de costos de compra, fletes, aranceles, carga tributaria y margen.</p></div>
+                    <div class="step-card"><div class="step-num">5</div><h4>Presentación de la Oferta</h4><p>Armado y envío formal del expediente técnico y propuesta económica.</p></div>
+                    <div class="step-card"><div class="step-num">6</div><h4>Seguimiento y Resultado</h4><p>Monitoreo de otorgamiento de la Buena Pro y registro en matriz de control CRM.</p></div>
+                    <div class="step-card"><div class="step-num">7</div><h4>Formalización del Contrato</h4><p>Presentación de garantías, firma de contrato o recepción de Orden de Compra.</p></div>
+                    <div class="step-card"><div class="step-num">8</div><h4>Ejecución, Conformidad y Postventa</h4><p>Entrega de unidades, acta de conformidad y encuesta de satisfacción postventa.</p></div>
+                </div>
+
+                <!-- 8 Pasos Alquiler Módulos K-POP (Oculto por defecto) -->
+                <div class="process-steps-grid" id="steps-kpop" style="display: none;">
+                    <div class="step-card"><div class="step-num">1</div><h4>Captación de Expositores</h4><p>Difusión visual en Instagram (@bacorp_Oficial), web y contacto directo para la Feria KPOP 2F.</p></div>
+                    <div class="step-card"><div class="step-num">2</div><h4>Contacto y Calificación</h4><p>Atención vía WhatsApp Business identificando el tipo de módulo requerido.</p></div>
+                    <div class="step-card"><div class="step-num">3</div><h4>Presentación de la Oferta</h4><p>Envío del catálogo digital con medidas (Básico, Premium o Personalizado).</p></div>
+                    <div class="step-card"><div class="step-num">4</div><h4>Resolución de Dudas y Negociación</h4><p>Definición de ubicación, personalización gráfica, pantallas LED y condiciones.</p></div>
+                    <div class="step-card"><div class="step-num">5</div><h4>Reserva y Separación</h4><p>Bloqueo de disponibilidad del módulo en el calendario del evento.</p></div>
+                    <div class="step-card"><div class="step-num">6</div><h4>Cierre de la Venta</h4><p>Confirmación de pago o transferencia y registro en el CRM de BACORP.</p></div>
+                    <div class="step-card"><div class="step-num">7</div><h4>Preparación y Coordinación</h4><p>Montaje técnico seguro de estructuras y paneles en 4 a 6 horas.</p></div>
+                    <div class="step-card"><div class="step-num">8</div><h4>Atención Durante y Post-Feria</h4><p>Soporte en el evento, evaluación de satisfacción e invitación a futuras ediciones.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             11. FORMULARIO DE REGISTRO Y COTIZACIÓN OMNICANAL + CRM (PÁG. 20, 35, 44 TA3)
+             ========================================================================== -->
+        <section class="section-padding contact-section" id="contacto">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag tag-orange">Registro Gratuito &amp; Estrategia Omnicanal CRM</span>
+                    <h2 class="section-title">Solicita tu Cotización sin Compromiso</h2>
+                    <p class="section-subtitle">
+                        Completa tus datos para recibir una propuesta personalizada de <strong>BACORP DUAL | BUSINESS</strong> o <strong>BACORP DUAL | K-POP</strong>. Tu consulta quedará registrada en nuestro sistema de seguimiento comercial con respuesta en menos de 18 horas.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Panel Izquierdo: Datos Oficiales de BACORP -->
+                    <aside class="contact-sidebar">
+                        <h3>BACORP SERVICIOS GENERALES S.A.C.</h3>
+                        <p>Canales oficiales de atención para entidades del Estado (OEC), empresas privadas y expositores de ferias.</p>
+
+                        <div class="contact-data-list">
+                            <div class="contact-data-item">
+                                <div class="contact-data-icon">🏛️</div>
+                                <div>
+                                    <strong>RUC &amp; Representante Legal</strong>
+                                    <span>RUC: 20608555146 (Sociedad Anónima Cerrada)<br>Gerente General: Bill Ángel Achahui Cortés</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-data-item">
+                                <div class="contact-data-icon">📍</div>
+                                <div>
+                                    <strong>Domicilio Fiscal (SUNAT)</strong>
+                                    <span>Cal. César Vallejo Nro. 474 Coo. La Universal 2da Etapa (Mz. N2 Lt. 12), Santa Anita, Lima - Perú</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-data-item">
+                                <div class="contact-data-icon">📞</div>
+                                <div>
+                                    <strong>WhatsApp Business &amp; Teléfono</strong>
+                                    <span>+51 987 654 321 / Atención Lunes a Viernes 8:30 - 18:00</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-data-item">
+                                <div class="contact-data-icon">✉️</div>
+                                <div>
+                                    <strong>Correo Corporativo &amp; Instagram</strong>
+                                    <span>ventas@bacorp.com.pe | contacto@bacorp.pe<br>Instagram: @bacorp_Oficial</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.06); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--bacorp-orange); font-size: 0.82rem;">
+                            <strong>Nota para Contrataciones del Estado:</strong>
+                            En procedimientos públicos, las cotizaciones tienen carácter informativo para indagación de mercado; la participación oficial se realiza a través de SEACE / PLADICOP.
+                        </div>
+                    </aside>
+
+                    <!-- Panel Derecho: Formulario Conectado al Carrito y al CRM -->
+                    <div class="form-card">
+                        <!-- Caja del Carrito de Cotización -->
+                        <div class="quote-cart-box">
+                            <div class="quote-cart-header">
+                                <strong>🛒 Carrito de Cotización B2B/B2G (<span id="form-cart-count">0</span> ítems seleccionados)</strong>
+                                <button type="button" id="clear-cart-btn" style="font-size: 0.76rem; color: var(--bacorp-orange); font-weight: 700;">Vaciar selección</button>
+                            </div>
+                            <div class="quote-cart-items" id="quote-cart-items">
+                                <span style="font-size: 0.8rem; color: var(--bacorp-gray-mid);">Aún no has añadido vehículos o módulos desde el catálogo. Puedes agregarlos arriba o describir tu necesidad abajo.</span>
+                            </div>
+                        </div>
+
+                        <form id="bacorp-crm-form" novalidate>
+                            <div class="form-grid">
+                                <div class="form-group full" id="grp-linea">
+                                    <label for="linea" class="form-label">Línea de Negocio de Interés <span>*</span></label>
+                                    <select id="linea" class="form-control" required>
+                                        <option value="">-- Seleccione la línea de negocio BACORP DUAL --</option>
+                                        <option value="Vehículos y equipos (BACORP BUSINESS)">BACORP DUAL | BUSINESS — Licitaciones, Flotas Vehiculares y Equipos</option>
+                                        <option value="Módulos K-POP (Feria KPOP 2F / Eventos)">BACORP DUAL | K-POP — Alquiler de Módulos para Eventos y Feria 2F</option>
+                                    </select>
+                                    <span class="err-msg">Seleccione la línea de negocio de interés.</span>
+                                </div>
+
+                                <div class="form-group" id="grp-cliente">
+                                    <label for="cliente" class="form-label">Entidad Pública / Empresa / Expositor <span>*</span></label>
+                                    <input type="text" id="cliente" class="form-control" placeholder="Ej. Municipalidad / Empresa S.A.C. / Marca" required>
+                                    <span class="err-msg">Ingrese el nombre de su entidad, empresa o marca.</span>
+                                </div>
+
+                                <div class="form-group" id="grp-ruc">
+                                    <label for="ruc" class="form-label">RUC (11 dígitos) o DNI (8 dígitos) <span>*</span></label>
+                                    <input type="text" id="ruc" class="form-control" placeholder="Ej. 20608555146" maxlength="11" required>
+                                    <span class="err-msg">Ingrese un RUC (11 dígitos) o DNI (8 dígitos) válido.</span>
+                                </div>
+
+                                <div class="form-group" id="grp-email">
+                                    <label for="email" class="form-label">Correo Electrónico <span>*</span></label>
+                                    <input type="email" id="email" class="form-control" placeholder="logistica@entidad.gob.pe" required>
+                                    <span class="err-msg">Ingrese un correo electrónico válido.</span>
+                                </div>
+
+                                <div class="form-group" id="grp-telefono">
+                                    <label for="telefono" class="form-label">Teléfono / WhatsApp <span>*</span></label>
+                                    <input type="tel" id="telefono" class="form-control" placeholder="+51 987 654 321" required>
+                                    <span class="err-msg">Ingrese un número de teléfono o WhatsApp válido.</span>
+                                </div>
+
+                                <div class="form-group full">
+                                    <label for="canal" class="form-label">Canal de Origen (Registro de Marketing TA3)</label>
+                                    <select id="canal" class="form-control">
+                                        <option value="Página web">Página Web Corporativa (BACORP DUAL)</option>
+                                        <option value="Instagram (@bacorp_Oficial)">Instagram (@bacorp_Oficial)</option>
+                                        <option value="WhatsApp Business">WhatsApp Business</option>
+                                        <option value="SEACE / PLADICOP">Convocatoria SEACE / PLADICOP</option>
+                                        <option value="Recomendación">Recomendación Directa</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group full" id="grp-detalle">
+                                    <label for="detalle" class="form-label">Descripción del Requerimiento / Especificaciones <span>*</span></label>
+                                    <textarea id="detalle" rows="3" class="form-control" placeholder="Detalle la cantidad de camionetas/maquinaria o el modelo de módulo K-POP (Básico, Premium o Personalizado), fechas y lugar..." required></textarea>
+                                    <span class="err-msg">Describa brevemente su requerimiento (mínimo 10 caracteres).</span>
+                                </div>
+
+                                <div class="form-group full" id="grp-consent">
+                                    <label style="display: flex; align-items: flex-start; gap: 0.55rem; font-size: 0.8rem; cursor: pointer;">
+                                        <input type="checkbox" id="consent" style="margin-top: 3px;" required>
+                                        <span>Autorizo el tratamiento de mis datos personales por parte de <strong>BACORP SERVICIOS GENERALES S.A.C.</strong> para la gestión de esta cotización y seguimiento comercial en su sistema CRM, conforme a la Ley de Protección de Datos Personales.</span>
+                                    </label>
+                                    <span class="err-msg">Debe aceptar el consentimiento de datos personales para continuar.</span>
+                                </div>
+
+                                <div class="form-group full">
+                                    <button type="submit" class="btn btn-orange" style="width: 100%; padding: 1rem; font-size: 0.95rem;">
+                                        Enviar Solicitud y Registrar en Control Comercial BACORP
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Confirmación Visual con Estructura de Tabla CRM de la TA3 (Pág. 20 y 35) -->
+                        <div class="crm-confirmation" id="crm-confirmation">
+                            <h4 style="color: var(--iso-green); font-size: 1.3rem; margin-bottom: 0.35rem;">✔ Oportunidad Comercial Registrada en el CRM de BACORP</h4>
+                            <p style="font-size: 0.88rem;">Tu solicitud ha sido ingresada automáticamente en la Matriz de Seguimiento Comercial con etiqueta de WhatsApp Business <strong>"Consulta nueva / Cotización solicitada"</strong>.</p>
+
+                            <div style="overflow-x: auto;">
+                                <table class="crm-table-preview">
+                                    <thead>
+                                        <tr>
+                                            <th>Código</th>
+                                            <th>Fecha</th>
+                                            <th>Cliente Potencial</th>
+                                            <th>Servicio de Interés</th>
+                                            <th>Canal</th>
+                                            <th>Estado</th>
+                                            <th>Próxima Acción</th>
+                                            <th>Responsable</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="crm-row-preview">
+                                        <!-- Fila generada dinámicamente -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 1rem;">
+                                <button type="button" class="btn btn-dark" id="new-quote-btn">Registrar otra consulta</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================================================
+         12. FOOTER CORPORATIVO OFICIAL DE BACORP SERVICIOS GENERALES S.A.C.
+         ========================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="bacorp-logo-box" style="margin-bottom: 0.85rem;">
+                        <div class="bacorp-wordmark">
+                            <span class="bacorp-wordmark-main">BACORP</span>
+                            <span class="bacorp-wordmark-sub" style="color: #D9D9D9;">SERVICIOS GENERALES S.A.C.</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.86rem; color: #9CA3AF; margin-bottom: 1rem;">
+                        "Soluciones que impulsan tu negocio". Empresa peruana proveedora del Estado y corporaciones privadas en suministro de flotas vehiculares, maquinaria pesada y módulos para eventos.
+                    </p>
+                    <p style="font-size: 0.8rem; color: #FFF;">
+                        <strong>RUC:</strong> 20608555146 | <strong>ISO 14001 &amp; ISO 37001</strong>
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Líneas BACORP DUAL</h4>
+                    <ul class="footer-links">
+                        <li><a href="#linea-business">BACORP DUAL | BUSINESS</a></li>
+                        <li><a href="#linea-business">Camionetas Toyota Hilux 4x4</a></li>
+                        <li><a href="#linea-business">Maquinaria Pesada y Equipos</a></li>
+                        <li><a href="#linea-kpop">BACORP DUAL | K-POP</a></li>
+                        <li><a href="#linea-kpop">Módulos Feria KPOP 2F</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Enlaces Institucionales</h4>
+                    <ul class="footer-links">
+                        <li><a href="#nosotros">Misión, Visión y Organigrama</a></li>
+                        <li><a href="#catalogo">Catálogo Digital de Servicios</a></li>
+                        <li><a href="#resultados">Resultados de Ventas 2025-2026</a></li>
+                        <li><a href="#contacto">Carrito de Cotización B2B</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contacto Oficial</h4>
+                    <ul class="footer-links">
+                        <li>📍 Cal. César Vallejo Nro. 474, Urb. La Universal 2da Etapa, Santa Anita - Lima</li>
+                        <li>👤 Gerente General: Bill Ángel Achahui Cortés</li>
+                        <li>✉️ ventas@bacorp.com.pe</li>
+                        <li>📱 Instagram: @bacorp_Oficial</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 BACORP SERVICIOS GENERALES S.A.C. (RUC 20608555146). Todos los derechos reservados.</span>
+                <span>Proyecto Estratégico Integrador UTP • Equipo Consultor: Guia, Felix, Soto, Toscano &amp; Pizarro.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+         JAVASCRIPT VANILLA: MENÚ, FILTRO CATÁLOGO, CARRITO B2B, PROCESOS Y CRM
+         ========================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            /* 1. Menú Hamburguesa y Scroll-Spy */
+            const navbar = document.getElementById('navbar');
+            const menuToggle = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section[id]');
+
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('open');
+                menuToggle.classList.toggle('active');
+            });
+
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('open');
+                    menuToggle.classList.remove('active');
+                });
+            });
+
+            window.addEventListener('scroll', () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 30);
+                let current = 'inicio';
+                sections.forEach(sec => {
+                    if (window.scrollY >= sec.offsetTop - 150) {
+                        current = sec.getAttribute('id');
+                    }
+                });
+                navLinks.forEach(l => {
+                    l.classList.toggle('active', l.getAttribute('href') === `#${current}`);
+                });
+            }, { passive: true });
+
+            /* 2. Filtro del Catálogo Digital (Business vs K-POP) */
+            const filterButtons = document.querySelectorAll('[data-filter]');
+            const catalogCards = document.querySelectorAll('.catalog-card');
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filter = btn.getAttribute('data-filter');
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    catalogCards.forEach(card => {
+                        const cat = card.getAttribute('data-category');
+                        if (filter === 'todos' || cat === filter) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            /* 3. Alternador de Flujograma de 8 Pasos (Licitación vs Módulos KPOP 2F) */
+            const btnProcLic = document.getElementById('btn-proc-licitacion');
+            const btnProcKpop = document.getElementById('btn-proc-kpop');
+            const stepsLic = document.getElementById('steps-licitacion');
+            const stepsKpop = document.getElementById('steps-kpop');
+
+            btnProcLic.addEventListener('click', () => {
+                btnProcLic.classList.add('active');
+                btnProcKpop.classList.remove('active');
+                stepsLic.style.display = 'grid';
+                stepsKpop.style.display = 'none';
+            });
+
+            btnProcKpop.addEventListener('click', () => {
+                btnProcKpop.classList.add('active');
+                btnProcLic.classList.remove('active');
+                stepsKpop.style.display = 'grid';
+                stepsLic.style.display = 'none';
+            });
+
+            /* 4. Carrito de Cotización B2B/B2G (Propuesta E-commerce Pág. 14 TA3) */
+            let quoteCart = [];
+            const navCartCount = document.getElementById('nav-cart-count');
+            const formCartCount = document.getElementById('form-cart-count');
+            const quoteCartItemsBox = document.getElementById('quote-cart-items');
+            const clearCartBtn = document.getElementById('clear-cart-btn');
+            const lineaSelect = document.getElementById('linea');
+            const addQuoteButtons = document.querySelectorAll('.add-quote-btn');
+
+            function renderQuoteCart() {
+                navCartCount.textContent = quoteCart.length;
+                formCartCount.textContent = quoteCart.length;
+
+                if (quoteCart.length === 0) {
+                    quoteCartItemsBox.innerHTML = '<span style="font-size: 0.8rem; color: var(--bacorp-gray-mid);">Aún no has añadido vehículos o módulos desde el catálogo. Puedes agregarlos arriba o describir tu necesidad abajo.</span>';
+                    addQuoteButtons.forEach(btn => {
+                        btn.classList.remove('added');
+                        btn.textContent = '+ Añadir al Carrito de Cotización';
+                    });
+                    return;
+                }
+
+                quoteCartItemsBox.innerHTML = quoteCart.map((item, idx) => `
+                    <span class="cart-chip">
+                        <span>${item}</span>
+                        <button type="button" data-remove="${idx}" title="Quitar ítem">&times;</button>
+                    </span>
+                `).join('');
+
+                quoteCartItemsBox.querySelectorAll('[data-remove]').forEach(remBtn => {
+                    remBtn.addEventListener('click', () => {
+                        const i = parseInt(remBtn.getAttribute('data-remove'), 10);
+                        quoteCart.splice(i, 1);
+                        renderQuoteCart();
+                    });
+                });
+            }
+
+            addQuoteButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const itemName = btn.getAttribute('data-item');
+                    const itemLine = btn.getAttribute('data-line');
+
+                    if (!quoteCart.includes(itemName)) {
+                        quoteCart.push(itemName);
+                    }
+
+                    btn.classList.add('added');
+                    btn.textContent = '✔ Añadido al Cotizador';
+
+                    if (itemLine === 'business') {
+                        lineaSelect.value = 'Vehículos y equipos (BACORP BUSINESS)';
+                    } else {
+                        lineaSelect.value = 'Módulos K-POP (Feria KPOP 2F / Eventos)';
+                    }
+
+                    renderQuoteCart();
+                });
+            });
+
+            clearCartBtn.addEventListener('click', () => {
+                quoteCart = [];
+                renderQuoteCart();
+            });
+
+            /* 5. Validación del Formulario y Simulación de Registro en Matriz CRM (Pág. 20 y 35 TA3) */
+            const crmForm = document.getElementById('bacorp-crm-form');
+            const crmConfirmation = document.getElementById('crm-confirmation');
+            const crmRowPreview = document.getElementById('crm-row-preview');
+            const newQuoteBtn = document.getElementById('new-quote-btn');
+
+            crmForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const linea = document.getElementById('linea');
+                const cliente = document.getElementById('cliente');
+                const ruc = document.getElementById('ruc');
+                const email = document.getElementById('email');
+                const telefono = document.getElementById('telefono');
+                const canal = document.getElementById('canal');
+                const detalle = document.getElementById('detalle');
+                const consent = document.getElementById('consent');
+
+                const validations = [
+                    { el: linea, grp: 'grp-linea', ok: linea.value.trim() !== '' },
+                    { el: cliente, grp: 'grp-cliente', ok: cliente.value.trim().length >= 2 },
+                    { el: ruc, grp: 'grp-ruc', ok: /^(\d{8}|\d{11})$/.test(ruc.value.trim()) },
+                    { el: email, grp: 'grp-email', ok: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()) },
+                    { el: telefono, grp: 'grp-telefono', ok: telefono.value.trim().length >= 7 },
+                    { el: detalle, grp: 'grp-detalle', ok: detalle.value.trim().length >= 10 },
+                    { el: consent, grp: 'grp-consent', ok: consent.checked }
+                ];
+
+                let allValid = true;
+                validations.forEach(v => {
+                    const g = document.getElementById(v.grp);
+                    if (!v.ok) {
+                        g.classList.add('has-error');
+                        v.el.classList.add('error');
+                        allValid = false;
+                    } else {
+                        g.classList.remove('has-error');
+                        v.el.classList.remove('error');
+                    }
+                });
+
+                if (!allValid) return;
+
+                const codeNum = Math.floor(100 + Math.random() * 900);
+                const today = new Date().toLocaleDateString('es-PE');
+
+                crmRowPreview.innerHTML = `
+                    <tr>
+                        <td><strong style="color:var(--bacorp-orange);">MKT-${codeNum}</strong></td>
+                        <td>${today}</td>
+                        <td>${cliente.value.replace(/</g, '&lt;')} (${ruc.value})</td>
+                        <td>${linea.value}</td>
+                        <td>${canal.value}</td>
+                        <td><span style="background:#FEF3C7; color:#D97706; padding:2px 6px; border-radius:4px; font-weight:700;">Cotización solicitada</span></td>
+                        <td>Coordinar propuesta (&lt;18h)</td>
+                        <td>Área Comercial</td>
+                    </tr>
+                `;
+
+                crmForm.style.display = 'none';
+                crmConfirmation.classList.add('active');
+            });
+
+            newQuoteBtn.addEventListener('click', () => {
+                crmForm.reset();
+                quoteCart = [];
+                renderQuoteCart();
+                crmConfirmation.classList.remove('active');
+                crmForm.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
